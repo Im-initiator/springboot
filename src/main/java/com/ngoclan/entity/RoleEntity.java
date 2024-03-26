@@ -13,6 +13,9 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@NamedEntityGraphs({
+        @NamedEntityGraph(name = "role.users",attributeNodes = @NamedAttributeNode("users"))
+})
 @Entity
 @Table(name = "tb_role")
 public class RoleEntity {

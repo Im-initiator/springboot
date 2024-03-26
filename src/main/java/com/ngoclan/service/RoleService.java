@@ -6,6 +6,5 @@ import org.springframework.data.jpa.repository.EntityGraph;
 public interface RoleService {
     RoleEntity save(RoleEntity role);
 
-
     RoleEntity findOneByCode(String code);
 }

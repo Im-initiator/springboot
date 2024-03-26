@@ -6,6 +6,11 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@NamedEntityGraphs({
+        @NamedEntityGraph(name = "user.roles",attributeNodes = @NamedAttributeNode("roles")),
+        @NamedEntityGraph(name = "user.products",attributeNodes = @NamedAttributeNode("products"))
+})
+@NamedEntityGraph(name = "user")
 @Entity
 @Table(name = "tb_user")
 public class UserEntity {

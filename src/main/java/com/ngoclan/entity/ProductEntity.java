@@ -16,5 +16,6 @@ public class ProductEntity {
     private String thumbnail;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name ="user_id")
     private UserEntity users;
 }

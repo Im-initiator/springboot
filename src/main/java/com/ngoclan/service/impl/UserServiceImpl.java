@@ -28,6 +28,7 @@ public class UserServiceImpl implements UserService {
         Set<RoleEntity> roles = userEntity.getRoles();
         roles.add(role);
         userEntity =  userRepository.save(userEntity);
+//        UserEntity user = userRepository.findOneById(2L);
         return null;
     }
 }
