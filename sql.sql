@@ -28,11 +28,11 @@ CREATE TABLE `tb_product` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `thumbnail` varchar(255) DEFAULT NULL,
-  `users_id` bigint DEFAULT NULL,
+  `user_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK3g3jq4naivm18rdha0s6jwssw` (`users_id`),
-  CONSTRAINT `FK3g3jq4naivm18rdha0s6jwssw` FOREIGN KEY (`users_id`) REFERENCES `tb_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `FK71fg44ns068tnlvra0oh83hvu` (`user_id`),
+  CONSTRAINT `FK71fg44ns068tnlvra0oh83hvu` FOREIGN KEY (`user_id`) REFERENCES `tb_user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,6 @@ CREATE TABLE `tb_product` (
 
 LOCK TABLES `tb_product` WRITE;
 /*!40000 ALTER TABLE `tb_product` DISABLE KEYS */;
-INSERT INTO `tb_product` VALUES (1,'Quần','//',2),(2,'Quần','//',2),(3,'Quần','//',2),(4,'Áo','//',2);
 /*!40000 ALTER TABLE `tb_product` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,7 +56,7 @@ CREATE TABLE `tb_role` (
   `code` varchar(255) DEFAULT NULL,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +65,7 @@ CREATE TABLE `tb_role` (
 
 LOCK TABLES `tb_role` WRITE;
 /*!40000 ALTER TABLE `tb_role` DISABLE KEYS */;
-INSERT INTO `tb_role` VALUES (1,'ADMIN','Quản trị'),(2,'USER','Người dùng'),(3,'TEST','test'),(4,'TEST','test'),(5,'TEST','test'),(6,'TEST','test');
+INSERT INTO `tb_role` VALUES (1,'USER','Người dùng');
 /*!40000 ALTER TABLE `tb_role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -83,7 +82,7 @@ CREATE TABLE `tb_user` (
   `password` varchar(255) DEFAULT NULL,
   `user_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -92,7 +91,7 @@ CREATE TABLE `tb_user` (
 
 LOCK TABLES `tb_user` WRITE;
 /*!40000 ALTER TABLE `tb_user` DISABLE KEYS */;
-INSERT INTO `tb_user` VALUES (2,'NgocLan1','123456','test1'),(5,'Ngọc Lan2','123456','test2'),(6,'Ngọc Lan3','123456','test2'),(7,'Ngọc Lan','123456','test2'),(8,'Ngọc Lan','123456','test2'),(9,'Ngọc Lan','123456','test2'),(10,'Ngọc Lan','123456','test2'),(11,'Ngọc Lan','123456','test2'),(12,'Ngọc Lan','123456','test2'),(13,'Ngọc Lan','123456','test2'),(17,'Ngọc Lan','123456','test2'),(18,'Ngọc Lan','123456','test2'),(19,'Ngọc Lan','123456','test2');
+INSERT INTO `tb_user` VALUES (1,'Ngoc lan','123456','test2'),(2,'Ngoc lan','123456','test2'),(3,'Ngoc lan','123456','test2'),(4,'Ngoc lan','123456','test2');
 /*!40000 ALTER TABLE `tb_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -119,7 +118,7 @@ CREATE TABLE `user_role` (
 
 LOCK TABLES `user_role` WRITE;
 /*!40000 ALTER TABLE `user_role` DISABLE KEYS */;
-INSERT INTO `user_role` VALUES (6,2),(7,2),(8,2),(9,2),(10,2),(17,2),(18,2),(19,2);
+INSERT INTO `user_role` VALUES (1,1),(2,1),(3,1),(4,1);
 /*!40000 ALTER TABLE `user_role` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -136,4 +135,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-26  1:16:37
+-- Dump completed on 2024-03-26 22:33:50
