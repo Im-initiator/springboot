@@ -3,14 +3,15 @@ import jakarta.persistence.*;
 import lombok.*;
 import java.util.HashSet;
 import java.util.Set;
+
+//@NamedEntityGraphs({
+//        @NamedEntityGraph(name = "user.roles",attributeNodes = @NamedAttributeNode("roles")),
+//        @NamedEntityGraph(name = "user.products",attributeNodes = @NamedAttributeNode("products"))
+//})
+//@NamedEntityGraph(name = "user")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@NamedEntityGraphs({
-        @NamedEntityGraph(name = "user.roles",attributeNodes = @NamedAttributeNode("roles")),
-        @NamedEntityGraph(name = "user.products",attributeNodes = @NamedAttributeNode("products"))
-})
-@NamedEntityGraph(name = "user")
 @Entity
 @Table(name = "tb_user")
 public class UserEntity {

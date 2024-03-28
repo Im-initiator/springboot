@@ -2,6 +2,6 @@ package com.ngoclan.service;
 
 import com.ngoclan.entity.UserEntity;
 
-public interface UserService {
+public interface IUserService {
     UserEntity save(UserEntity userEntity);
 }

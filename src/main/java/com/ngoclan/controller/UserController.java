@@ -1,7 +1,7 @@
 package com.ngoclan.controller;
 
 import com.ngoclan.entity.UserEntity;
-import com.ngoclan.service.UserService;
+import com.ngoclan.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    private IUserService userService;
 
     @PostMapping()
     public ResponseEntity<?> save(@RequestBody UserEntity user){
         UserEntity userEntity = userService.save(user);
-        return ResponseEntity.ok(null);
+        return ResponseEntity.ok(userEntity);
     }
 }
